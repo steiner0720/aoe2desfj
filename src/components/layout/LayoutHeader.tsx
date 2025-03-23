@@ -1,4 +1,4 @@
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -47,18 +47,25 @@ function LayoutAvatarDropdown() {
   const { data } = useSession();
   const isLogged = !!data;
 
+  const { image: avatar, name } = data?.user ?? {};
   const handleSignIn = () => {
     signIn("google");
   };
 
-  console.log(data);
   return isLogged ? (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">account</Button>
+        <div className="flex cursor-pointer items-center gap-1 text-center">
+          <img
+            src={avatar ?? ""}
+            alt="avatar"
+            className="h-5 w-5 overflow-hidden rounded-full"
+          />
+          <div className="text-[16px] font-bold">{name}</div>
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem>logout</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => signOut()}>SignOut</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   ) : (
