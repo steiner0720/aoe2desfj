@@ -1,4 +1,5 @@
 export type GenerateRMSContentParams = {
+  mapSize: string;
   baseTerrain: string;
   borderFuzziness: number;
   clumpingFactor: number;

@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import useMapConfigurationFields from "@/hooks/useMapConfigurationFields";
 import MapConfiguration from "@/modules/mapConfiguration/MapConfiguration";
 import RMSEditor from "@/modules/rmsEditor/RMSEditor";
+import RMSPreview from "@/modules/rmsPreview/RMSPreview";
 
 function CreateMapPage() {
   const { data } = useMapConfigurationFields();
@@ -49,7 +50,7 @@ function CreateMapPage() {
               <RMSEditor />
             </TabsContent>
             <TabsContent value="preview">
-              Change your password here.
+              <RMSPreview />
             </TabsContent>
           </Tabs>
         </div>
