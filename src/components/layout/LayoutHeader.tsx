@@ -76,12 +76,21 @@ function LayoutAvatarDropdown() {
 }
 
 function LayoutHeader() {
+  const router = useRouter();
+
   return (
     <div className="fixed top-0 flex h-16 w-full items-center justify-between bg-white px-6 py-2 shadow-md shadow-slate-200 backdrop-blur-md">
       <div className="text-xl font-bold text-slate-700">
         <Link href="/">AOE2 DE SFJ</Link>
       </div>
       <div className="flex gap-4">
+        <Button
+          onClick={() => {
+            router.push("/create");
+          }}
+        >
+          Create
+        </Button>
         <LanguageSwitcher />
         <LayoutAvatarDropdown />
       </div>
