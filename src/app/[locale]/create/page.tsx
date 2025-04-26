@@ -6,9 +6,11 @@ import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import useMapConfigurationFields from "@/hooks/useMapConfigurationFields";
 import MapConfiguration from "@/modules/mapConfiguration/MapConfiguration";
+import RMSEditor from "@/modules/rmsEditor/RMSEditor";
 
 function CreateMapPage() {
   const { data } = useMapConfigurationFields();
@@ -18,8 +20,6 @@ function CreateMapPage() {
     resolver: zodResolver(formSchema),
     defaultValues,
   });
-
-  // console.log(form.watch());
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
@@ -39,7 +39,20 @@ function CreateMapPage() {
             </form>
           </Form>
         </div>
-        <div className="h-full w-full">23132as32d</div>
+        <div className="h-full w-full">
+          <Tabs defaultValue="rms" className="h-full w-full">
+            <TabsList>
+              <TabsTrigger value="rms">.RMS</TabsTrigger>
+              <TabsTrigger value="preview">Preview</TabsTrigger>
+            </TabsList>
+            <TabsContent value="rms" className="h-[calc(100%-37px)] w-full">
+              <RMSEditor />
+            </TabsContent>
+            <TabsContent value="preview">
+              Change your password here.
+            </TabsContent>
+          </Tabs>
+        </div>
       </FormProvider>
     </div>
   );

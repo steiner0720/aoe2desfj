@@ -6,14 +6,14 @@ import { ConfigurationFieldType } from "@/modules/mapConfiguration/type";
 
 const basicConfigureFields: ConfigurationFieldType[] = [
   {
-    name: "map_name",
+    name: "mapName",
     label: "地圖名稱 (Map Name)",
     placeholder: "input the map name",
     defaultValue: "Map Name",
     componentType: "input",
   },
   {
-    name: "map_size",
+    name: "mapSize",
     label: "地圖尺寸 (Map Size)",
     placeholder: "select the map size",
     options: [
@@ -26,7 +26,7 @@ const basicConfigureFields: ConfigurationFieldType[] = [
     componentType: "singleSelect",
   },
   {
-    name: "base_terrain",
+    name: "baseTerrain",
     label: "基礎地形 (Base Terrain)",
     placeholder: "select the base terrain",
     options: [
@@ -40,7 +40,7 @@ const basicConfigureFields: ConfigurationFieldType[] = [
     componentType: "singleSelect",
   },
   {
-    name: "forest_percent",
+    name: "forestPercent",
     label: "森林百分比 (Forest Percent)",
     defaultValue: 8,
     range: [0, 20],
@@ -48,7 +48,7 @@ const basicConfigureFields: ConfigurationFieldType[] = [
     componentType: "slider",
   },
   {
-    name: "water_percent",
+    name: "waterPercent",
     label: "水域百分比 (Water Percent)",
     defaultValue: 0,
     range: [0, 30],
@@ -56,7 +56,7 @@ const basicConfigureFields: ConfigurationFieldType[] = [
     componentType: "slider",
   },
   {
-    name: "relic_count",
+    name: "relicCount",
     label: "遺物數量 (Relic Count)",
     defaultValue: 5,
     range: [1, 10],
@@ -64,7 +64,7 @@ const basicConfigureFields: ConfigurationFieldType[] = [
     componentType: "slider",
   },
   {
-    name: "starting_gold",
+    name: "startingGold",
     label: "起始金礦 (Starting Gold)",
     placeholder: "select the starting gold",
     options: [
@@ -80,7 +80,7 @@ const basicConfigureFields: ConfigurationFieldType[] = [
 
 const advancedConfigureFields: ConfigurationFieldType[] = [
   {
-    name: "huntable_count",
+    name: "huntableCount",
     label: "狩獵動物數量 (Huntable Count)",
     defaultValue: 4,
     range: [0, 20],
@@ -88,7 +88,7 @@ const advancedConfigureFields: ConfigurationFieldType[] = [
     componentType: "slider",
   },
   {
-    name: "elevation_intensity",
+    name: "elevationIntensity",
     label: "高度變化 (Elevation Intensity)",
     placeholder: "select the elevation intensity",
     options: [
@@ -101,7 +101,7 @@ const advancedConfigureFields: ConfigurationFieldType[] = [
     componentType: "singleSelect",
   },
   {
-    name: "clumping_factor",
+    name: "clumpingFactor",
     label: "地形聚集度 (Clumping Factor)",
     range: [0, 200],
     sliderUnit: "",
@@ -109,7 +109,7 @@ const advancedConfigureFields: ConfigurationFieldType[] = [
     componentType: "slider",
   },
   {
-    name: "border_fuzziness",
+    name: "borderFuzziness",
     label: "邊界模糊度 (Border Fuzziness)",
     range: [0, 50],
     sliderUnit: "",
@@ -117,7 +117,7 @@ const advancedConfigureFields: ConfigurationFieldType[] = [
     componentType: "slider",
   },
   {
-    name: "watch_tower_count",
+    name: "watchTowerCount",
     label: "箭塔數量 (Watch Tower Count)",
     range: [0, 10],
     sliderUnit: "",
