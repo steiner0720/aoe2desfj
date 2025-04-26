@@ -4,10 +4,10 @@
   height: 100%;
   overflow-y: auto;
   border-radius: 6px;
-  border-width: 2px;
+  border-width: 1px;
   border-color: var(--color-slate-300);
-  background-color: black;
-  color: var(--color-slate-200);
+  background-color: var(--color-slate-200);
+  color: oklch(0.53 0.04 252.68);
   --tw-shadow:
     0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)),
     0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -15,4 +15,8 @@
     var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
     var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   --tw-shadow-color: var(--color-slate-200);
+}
+
+.rms-editor > div:focus-visible {
+  outline: none;
 }
